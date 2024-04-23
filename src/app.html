@@ -1,0 +1,163 @@
+<!-- je kan tailwind installeren via NPM of plaats deze script in public/index.html -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="max-w-[1100px] mx-auto py-8">
+    <h1 class="mb-4 text-4xl font-bold">Packing list</h1>
+    <div class="my-8">
+        <div class="flex gap-2 items-center mb-2">Category: <button type="button"
+                class="transition border border-blue-500 bg-blue-500 text-blue-100 px-4 py-1 rounded-full">Documents</button><button
+                type="button"
+                class="transition border border-neutral-200 text-neutral-500 px-4 py-1 rounded-full">Clothes</button><button
+                type="button"
+                class="transition border border-neutral-200 text-neutral-500 px-4 py-1 rounded-full">Camping
+                gear</button><button type="button"
+                class="transition border border-neutral-200 text-neutral-500 px-4 py-1 rounded-full">Toiletry</button>
+        </div>
+        <form class="flex rounded-lg overflow-hidden"><input placeholder="What would you like to pack?" type="text"
+                class="flex-1 p-4 bg-neutral-200 focus:bg-neutral-300/90 transition-all outline-none"
+                value="Something"><button type="submit"
+                class="px-4 py-2 bg-blue-500 active:bg-blue-400 text-blue-100 disabled:opacity-50 disabled:cursor-not-allowed transition">Add
+                item</button></form>
+    </div>
+    <div class="grid grid-cols-2 gap-4 mt-12 transition ">
+        <div>
+            <header class="grid gap-2 items-center mb-6 border-b pb-6">
+                <h2 class="font-bold text-2xl">Items to pack</h2>
+                <div class="flex gap-2"><button
+                        class="bg-blue-500 text-blue-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all rounded-lg px-2 py-1">Remove
+                        all items</button><button disabled=""
+                        class="bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-indigo-100 rounded-lg px-2 py-1">Clear
+                        filters</button></div>
+            </header>
+            <div style="opacity: 1; pointer-events: all;" class="transition-all my-4 flex gap-2 flex-wrap items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-filter">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg><button type="button" class="
+    transition-all px-4 py-1 rounded-full text-sm
+    bg-neutral-300 hover:bg-neutral-400/70
+">Documents</button><button type="button" class="
+    transition-all px-4 py-1 rounded-full text-sm
+    bg-neutral-300 hover:bg-neutral-400/70
+">Clothes</button><button type="button" class="
+    transition-all px-4 py-1 rounded-full text-sm
+    bg-neutral-300 hover:bg-neutral-400/70
+">Camping gear</button><button type="button" class="
+    transition-all px-4 py-1 rounded-full text-sm
+    bg-neutral-300 hover:bg-neutral-400/70
+">Toiletry</button></div>
+            <ul class="grid gap-2">
+                <li>
+                    <div class="overflow-hidden bg-neutral-200 transition-all rounded-lg flex justify-between gap-2 ">
+                        <div class="p-4 flex-1 flex gap-4 items-center justify-between">
+                            <div class="grid"><span>Passport</span><span class="text-neutral-400">Documents</span></div>
+                            <button
+                                class="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg">×
+                                remove item</button>
+                        </div><button
+                            class="bg-blue-500 hover:bg-blue-600 transition-all text-blue-100 p-4">Pack</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="overflow-hidden bg-neutral-200 transition-all rounded-lg flex justify-between gap-2 ">
+                        <div class="p-4 flex-1 flex gap-4 items-center justify-between">
+                            <div class="grid"><span>Tshirts</span><span class="text-neutral-400">Clothes</span></div>
+                            <button
+                                class="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg">×
+                                remove item</button>
+                        </div><button
+                            class="bg-blue-500 hover:bg-blue-600 transition-all text-blue-100 p-4">Pack</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="overflow-hidden bg-neutral-200 transition-all rounded-lg flex justify-between gap-2 ">
+                        <div class="p-4 flex-1 flex gap-4 items-center justify-between">
+                            <div class="grid"><span>Tent</span><span class="text-neutral-400">Camping gear</span></div>
+                            <button
+                                class="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg">×
+                                remove item</button>
+                        </div><button
+                            class="bg-blue-500 hover:bg-blue-600 transition-all text-blue-100 p-4">Pack</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="overflow-hidden bg-neutral-200 transition-all rounded-lg flex justify-between gap-2 ">
+                        <div class="p-4 flex-1 flex gap-4 items-center justify-between">
+                            <div class="grid"><span>Toothbrush</span><span class="text-neutral-400">Toiletry</span>
+                            </div><button
+                                class="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg">×
+                                remove item</button>
+                        </div><button
+                            class="bg-blue-500 hover:bg-blue-600 transition-all text-blue-100 p-4">Pack</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="overflow-hidden bg-neutral-200 transition-all rounded-lg flex justify-between gap-2 ">
+                        <div class="p-4 flex-1 flex gap-4 items-center justify-between">
+                            <div class="grid"><span>Shampoo</span><span class="text-neutral-400">Toiletry</span></div>
+                            <button
+                                class="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg">×
+                                remove item</button>
+                        </div><button
+                            class="bg-blue-500 hover:bg-blue-600 transition-all text-blue-100 p-4">Pack</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <header class="grid gap-2 items-center mb-6 border-b pb-6">
+                <h2 class="font-bold text-2xl">Packed items</h2>
+                <div class="flex gap-2"><button
+                        class="bg-blue-500 text-blue-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all rounded-lg px-2 py-1">Remove
+                        all items</button><button disabled=""
+                        class="bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-indigo-100 rounded-lg px-2 py-1">Clear
+                        filters</button></div>
+            </header>
+            <div style="opacity: 1; pointer-events: all;" class="transition-all my-4 flex gap-2 flex-wrap items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-filter">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg><button type="button" class="
+    transition-all px-4 py-1 rounded-full text-sm
+    bg-neutral-300 hover:bg-neutral-400/70
+">Documents</button><button type="button" class="
+    transition-all px-4 py-1 rounded-full text-sm
+    bg-neutral-300 hover:bg-neutral-400/70
+">Clothes</button><button type="button" class="
+    transition-all px-4 py-1 rounded-full text-sm
+    bg-neutral-300 hover:bg-neutral-400/70
+">Camping gear</button><button type="button" class="
+    transition-all px-4 py-1 rounded-full text-sm
+    bg-neutral-300 hover:bg-neutral-400/70
+">Toiletry</button></div>
+            <ul class="grid gap-2">
+                <li>
+                    <div
+                        class="overflow-hidden bg-neutral-200 transition-all rounded-lg flex justify-between gap-2 flex-row-reverse">
+                        <div class="p-4 flex-1 flex gap-4 items-center justify-between">
+                            <div class="grid"><span>Jeans</span><span class="text-neutral-400">Clothes</span></div>
+                            <button
+                                class="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg">×
+                                remove item</button>
+                        </div><button
+                            class="bg-sky-500 hover:bg-sky-600 transition-all text-sky-100 p-4">Unpack</button>
+                    </div>
+                </li>
+                <li>
+                    <div
+                        class="overflow-hidden bg-neutral-200 transition-all rounded-lg flex justify-between gap-2 flex-row-reverse">
+                        <div class="p-4 flex-1 flex gap-4 items-center justify-between">
+                            <div class="grid"><span>Sleeping mat</span><span class="text-neutral-400">Camping
+                                    gear</span></div><button
+                                class="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg">×
+                                remove item</button>
+                        </div><button
+                            class="bg-sky-500 hover:bg-sky-600 transition-all text-sky-100 p-4">Unpack</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
