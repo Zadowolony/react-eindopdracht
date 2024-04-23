@@ -20,7 +20,7 @@ export default function ItemListNotPacked({ items, togglePacked, removeItem }) {
                                 <div className="p-4 flex-1 flex gap-4 items-center justify-between">
                                     <div className="grid">
                                         <span>{item.item}</span>
-                                        <span className="text-neutral-400">Documents</span>
+                                        <span className="text-neutral-400">{item.category}</span>
                                     </div>
                                     <button
                                         className="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg"

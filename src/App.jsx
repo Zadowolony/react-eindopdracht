@@ -8,10 +8,16 @@ import ItemContainer from './components/ItemContainer';
 function App() {
 
   const [items, setItems] = useState([]);
+  const [category, setCategory] = useState('All');
+
 
   const handleAddItems = (item) => {
-    const newItem = { id: crypto.randomUUID(), item, packed: false, category: 'documents' }
-    setItems([newItem, ...items])
+
+
+    const newItem = { id: crypto.randomUUID(), item, packed: false, category }
+    setItems([newItem, ...items]);
+
+
   }
 
   const handleRemoveItem = (id) => {
@@ -34,6 +40,15 @@ function App() {
       item.id === id ? { ...item, packed: !item.packed } : item
     ));
   }
+
+
+
+
+
+  // const addItemWithcategory = (item) => {
+  //   handleAddItems(item, category)
+  // }
+
   return (
 
     <div classname="App">
@@ -42,15 +57,20 @@ function App() {
 
         <HeaderContainer
           items={items}
-          handleAddItems={handleAddItems} />
+          handleAddItems={handleAddItems}
+          setCategory={setCategory}
+        />
 
 
         <ItemContainer
           items={items}
+
           removeItem={handleRemoveItem}
           removeAllItemsNotPacked={handleRemoveAllItemsNotPacked}
           removeAllItemsPacked={handleRemoveAllItemsPacked}
-          togglePacked={handleTogglePacked} />
+          togglePacked={handleTogglePacked}
+
+        />
 
 
       </div>

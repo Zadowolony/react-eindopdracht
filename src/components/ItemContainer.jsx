@@ -4,7 +4,7 @@ import ItemContainerPacked from "./ItemContainerPacked";
 
 
 
-export default function ItemContainer({ items, removeItem, removeAllItems, togglePacked, removeAllItemsPacked, removeAllItemsNotPacked }) {
+export default function ItemContainer({ items, removeItem, togglePacked, removeAllItemsPacked, removeAllItemsNotPacked }) {
 
 
 
@@ -16,22 +16,19 @@ export default function ItemContainer({ items, removeItem, removeAllItems, toggl
                 items={items}
                 removeItem={removeItem}
                 removeAllItemsNotPacked={removeAllItemsNotPacked}
-                togglePacked={togglePacked} />
+                togglePacked={togglePacked}
+
+            />
 
 
 
             <div>
-
-
-
 
                 <ItemContainerPacked
                     items={items}
                     removeItem={removeItem}
                     togglePacked={togglePacked}
                     removeAllItemsPacked={removeAllItemsPacked} />
-
-
             </div>
         </div>
     )

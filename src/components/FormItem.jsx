@@ -1,13 +1,13 @@
 import { useState } from "react"
 
-export default function FormItem({ items, handleAddItems }) {
+export default function FormItem({ handleAddItems, category }) {
 
     const [input, setInput] = useState('')
 
     const handleItem = (e) => {
 
         e.preventDefault();
-        handleAddItems(input);
+        handleAddItems(input, category);
         setInput('');
 
 

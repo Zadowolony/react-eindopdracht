@@ -1,4 +1,4 @@
-export default function ItemCategories({ setCategory }) {
+export default function ItemsCategoryNotPacked({ }) {
 
     const categories = ['Documents', 'Clothes', 'Camping gear', 'Toiletry'];
 
@@ -32,7 +32,7 @@ export default function ItemCategories({ setCategory }) {
                                     transition-all px-4 py-1 rounded-full text-sm
                                     bg-neutral-300 hover:bg-neutral-400/70
                                     "
-                        onClick={() => setCategory(category)}
+
                     >
                         {category}
                     </button>

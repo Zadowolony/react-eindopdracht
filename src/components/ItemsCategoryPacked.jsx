@@ -1,4 +1,4 @@
-export default function ItemCategories({ setCategory }) {
+export default function ItemCategoryPacked({ setCategory }) {
 
     const categories = ['Documents', 'Clothes', 'Camping gear', 'Toiletry'];
 

@@ -1,9 +1,10 @@
-import ItemCategories from "./ItemCategories";
+
 
 import ItemListNotPacked from "./ItemListNotPacked";
+import ItemsCategoryNotPacked from "./ItemsCategoryNotPacked";
 import MainButtonsNotPacked from "./MainButtonsNotPacked";
 
-export default function ItemContainerNotPacked({ items, removeItem, removeAllItemsNotPacked, togglePacked }) {
+export default function ItemContainerNotPacked({ items, removeItem, removeAllItemsNotPacked, togglePacked, }) {
 
     return (
 
@@ -16,19 +17,21 @@ export default function ItemContainerNotPacked({ items, removeItem, removeAllIte
                         removeAllItemsNotPacked={removeAllItemsNotPacked}
                         items={items}
 
+
                     />
 
                 </div>
             </header>
 
-
-            <ItemCategories />
+            <ItemsCategoryNotPacked
+            />
 
 
             <ItemListNotPacked
                 items={items}
                 removeItem={removeItem}
-                togglePacked={togglePacked} />
+                togglePacked={togglePacked}
+            />
 
         </div>
     )

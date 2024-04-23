@@ -1,9 +1,10 @@
-import ItemCategories from "./ItemCategories";
+
 
 import ItemListPacked from "./ItemListPacked";
+import ItemCategoryPacked from "./ItemsCategoryPacked";
 import MainButtonPacked from "./MainButtonPacked";
 
-export default function ItemContainerPacked({ items, removeItem, togglePacked, removeAllItemsPacked }) {
+export default function ItemContainerPacked({ items, removeItem, togglePacked, removeAllItemsPacked, setCategory }) {
 
     return (
 
@@ -21,7 +22,8 @@ export default function ItemContainerPacked({ items, removeItem, togglePacked, r
 
                 </div>
             </header>
-            <ItemCategories />
+            <ItemCategoryPacked
+                setCategory={setCategory} />
             <ItemListPacked
                 items={items}
                 removeItem={removeItem}

@@ -1,14 +1,9 @@
-import { useState } from "react";
+
 import CategoriesItems from "./CategoriesItems";
 import FormItem from "./FormItem";
 
-export default function HeaderContainer({ items, handleAddItems }) {
+export default function HeaderContainer({ items, handleAddItems, setCategory, category }) {
 
-    const [category, setCategory] = useState('');
-
-    const addItemWithcategory = (item) => {
-        handleAddItems(item, category)
-    }
 
 
 
@@ -19,9 +14,11 @@ export default function HeaderContainer({ items, handleAddItems }) {
 
                 <CategoriesItems
                     setCategory={setCategory} />
+
                 <FormItem
                     items={items}
-                    handleAddItems={addItemWithcategory} />
+                    handleAddItems={handleAddItems}
+                    category={category} />
 
 
             </div>

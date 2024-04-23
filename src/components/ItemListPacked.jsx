@@ -21,7 +21,7 @@ export default function ItemListPacked({ items, togglePacked, removeItem }) {
                             <div
                                 class="overflow-hidden bg-neutral-200 transition-all rounded-lg flex justify-between gap-2 flex-row-reverse">
                                 <div class="p-4 flex-1 flex gap-4 items-center justify-between">
-                                    <div class="grid"><span>{item.item}</span><span class="text-neutral-400">Clothes</span></div>
+                                    <div class="grid"><span>{item.item}</span><span class="text-neutral-400">{item.category}</span></div>
 
                                     <button
                                         class="text-sm opacity-30 hover:opacity-100 px-4 py-1 flex items-center justify-center bg-gray-400 text-black hover:bg-red-300/70 transition-all hover:text-red-500 rounded-full text-lg"
