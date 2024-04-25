@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import HeaderContainer from './components/HeaderContainer';
 import ItemContainer from './components/ItemContainer';
@@ -41,13 +41,11 @@ function App() {
     ));
   }
 
+  useEffect(() => {
+    document.title = `Packing App`
+  })
 
 
-
-
-  // const addItemWithcategory = (item) => {
-  //   handleAddItems(item, category)
-  // }
 
   return (
 

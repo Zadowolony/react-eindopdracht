@@ -36,6 +36,8 @@ export default function ItemContainerNotPacked({ items, removeItem, removeAllIte
             <ItemsCategoryNotPacked
                 setActiveCategory={setActiveCategory}
                 activeCategory={activeCategory}
+                items={items}
+
             />
 
 
@@ -43,6 +45,7 @@ export default function ItemContainerNotPacked({ items, removeItem, removeAllIte
                 items={filteredItems}
                 removeItem={removeItem}
                 togglePacked={togglePacked}
+
             />
 
         </div>

@@ -1,9 +1,12 @@
 
+import { useState } from "react";
 import CategoriesItems from "./CategoriesItems";
 import FormItem from "./FormItem";
 
-export default function HeaderContainer({ items, handleAddItems, setCategory, category }) {
+export default function HeaderContainer({ items, handleAddItems, category, setCategory }) {
 
+    // Hier toevoegen om de knoppen kleur werkend te krijgen
+    //const [category, setCategory] = useState('');
 
 
 
@@ -13,7 +16,8 @@ export default function HeaderContainer({ items, handleAddItems, setCategory, ca
             <div className="my-8">
 
                 <CategoriesItems
-                    setCategory={setCategory} />
+                    setCategory={setCategory}
+                    category={category} />
 
                 <FormItem
                     items={items}

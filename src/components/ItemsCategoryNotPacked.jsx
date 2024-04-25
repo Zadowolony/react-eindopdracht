@@ -1,4 +1,4 @@
-export default function ItemsCategoryNotPacked({ setActiveCategory, activeCategory }) {
+export default function ItemsCategoryNotPacked({ setActiveCategory, activeCategory, items }) {
 
     const categories = ['Documents', 'Cloths', 'Camping gear', 'Toiletry'];
 
@@ -12,6 +12,8 @@ export default function ItemsCategoryNotPacked({ setActiveCategory, activeCatego
             setActiveCategory([...activeCategory, category]);
         }
     };
+
+    let anyUnpacked = items.some(item => item.packed === false);
 
     return (
 
@@ -40,8 +42,9 @@ export default function ItemsCategoryNotPacked({ setActiveCategory, activeCatego
                     <button
                         key={category}
                         type="button"
-                        className={`transition-all px-4 py-1 rounded-full text-sm ${activeCategory.includes(category) ? 'bg-blue-300' : 'bg-neutral-300 hover:bg-neutral-400/70'}`}
+                        className={`transition-all px-4 py-1 rounded-full text-sm ${activeCategory.includes(category) ? 'bg-blue-300' : 'bg-neutral-300'} ${!anyUnpacked ? 'opacity-50 cursor-not-allowed' : 'hover:bg-neutral-400/70'}`}
                         onClick={() => toggleCategory(category)}
+                        disabled={!anyUnpacked}
 
                     >
                         {category}

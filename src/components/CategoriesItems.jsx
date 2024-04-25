@@ -1,17 +1,38 @@
-export default function CategoriesItems({ setCategory }) {
+import { useEffect, useState } from "react";
+
+export default function CategoriesItems({ setCategory, category }) {
 
     const categories = ['Documents', 'Cloths', 'Camping gear', 'Toiletry'];
+
+    const handleCategoryClick = (cat) => {
+
+        console.log("Attempting to set category to:", cat);  // Debug before setting
+        setCategory(cat);
+        console.log("Category should now be:", cat);  // Debug after setting
+
+    };
+
+    useEffect(() => {
+        console.log("Component re-rendered, current category:", category);
+    }, [category]);
+
+
+
+
+
     return (
         <div className="flex gap-2 items-center mb-2">
-            Category:{categories.map(category => (
+            Category:{categories.map(cat => (
 
                 <button
-                    key={category}
+                    key={cat}
                     type="button"
-                    className="transition border border-blue-500 bg-blue-500 text-blue-100 px-4 py-1 rounded-full"
-                    onClick={() => setCategory(category)}
+                    className={`transition border px-4 py-1 rounded-full ${category === cat
+                        ? 'active' : 'inactive'
+                        }`}
+                    onClick={() => handleCategoryClick(cat)}
                 >
-                    {category}
+                    {cat}
                 </button>
 
             ))}

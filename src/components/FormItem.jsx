@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function FormItem({ handleAddItems, category }) {
+
+    const inputRef = useRef()
 
     const [input, setInput] = useState('')
 
@@ -9,9 +11,11 @@ export default function FormItem({ handleAddItems, category }) {
         e.preventDefault();
         handleAddItems(input, category);
         setInput('');
-
-
     }
+
+    useEffect(() => {
+        inputRef.current.focus();
+    })
 
     return (
 
@@ -22,6 +26,7 @@ export default function FormItem({ handleAddItems, category }) {
                 type="text"
                 className="flex-1 p-4 bg-neutral-200 focus:bg-neutral-300/90 transition-all outline-none"
                 value={input}
+                ref={inputRef}
                 onChange={(e) => setInput(e.target.value)}
             />
 

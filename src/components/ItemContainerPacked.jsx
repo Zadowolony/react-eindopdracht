@@ -23,7 +23,7 @@ export default function ItemContainerPacked({ items, removeItem, togglePacked, r
                     <MainButtonPacked
                         removeAllItemsPacked={removeAllItemsPacked}
                         items={items}
-                        activeCategory={activeCategory}
+
                         setActiveCategory={setActiveCategory} />
 
 
@@ -33,7 +33,8 @@ export default function ItemContainerPacked({ items, removeItem, togglePacked, r
 
             <ItemCategoryPacked
                 setActiveCategory={setActiveCategory}
-                activeCategory={activeCategory} />
+                activeCategory={activeCategory}
+                items={items} />
 
 
             <ItemListPacked
