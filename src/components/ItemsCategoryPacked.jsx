@@ -1,6 +1,16 @@
-export default function ItemCategoryPacked({ setCategory }) {
+export default function ItemCategoryPacked({ setActiveCategory, activeCategory }) {
 
-    const categories = ['Documents', 'Clothes', 'Camping gear', 'Toiletry'];
+    const categories = ['Documents', 'Cloths', 'Camping gear', 'Toiletry'];
+
+    const toggleCategory = (category) => {
+        if (activeCategory.includes(category)) {
+
+            setActiveCategory(activeCategory.filter(c => c !== category));
+        } else {
+
+            setActiveCategory([...activeCategory, category]);
+        }
+    };
 
     return (
 
@@ -20,6 +30,7 @@ export default function ItemCategoryPacked({ setCategory }) {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     className="lucide lucide-filter"
+                    onClick={() => setActiveCategory([])}
                 >
                     <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
                 </svg>
@@ -28,11 +39,9 @@ export default function ItemCategoryPacked({ setCategory }) {
                     <button
                         key={category}
                         type="button"
-                        className="
-                                    transition-all px-4 py-1 rounded-full text-sm
-                                    bg-neutral-300 hover:bg-neutral-400/70
-                                    "
-                        onClick={() => setCategory(category)}
+                        className={`transition-all px-4 py-1 rounded-full text-sm ${activeCategory.includes(category) ? 'bg-blue-300' : 'bg-neutral-300 hover:bg-neutral-400/70'}`}
+
+                        onClick={() => toggleCategory(category)}
                     >
                         {category}
                     </button>

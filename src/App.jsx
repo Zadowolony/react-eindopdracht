@@ -64,7 +64,6 @@ function App() {
 
         <ItemContainer
           items={items}
-
           removeItem={handleRemoveItem}
           removeAllItemsNotPacked={handleRemoveAllItemsNotPacked}
           removeAllItemsPacked={handleRemoveAllItemsPacked}

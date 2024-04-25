@@ -1,4 +1,4 @@
-export default function MainButtonsNotPacked({ removeAllItemsNotPacked, items }) {
+export default function MainButtonsNotPacked({ removeAllItemsNotPacked, items, setActiveCategory }) {
 
     const showIcon = items.filter(item => !item.packed)
 
@@ -14,7 +14,9 @@ export default function MainButtonsNotPacked({ removeAllItemsNotPacked, items })
             <button
 
                 className="bg-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-indigo-100 rounded-lg px-2 py-1"
+
                 disabled={showIcon.length === 0}
+                onClick={() => setActiveCategory([])}
             >
                 Clear filters
             </button>

@@ -1,10 +1,16 @@
 
 
+import { useState } from "react";
 import ItemListPacked from "./ItemListPacked";
 import ItemCategoryPacked from "./ItemsCategoryPacked";
 import MainButtonPacked from "./MainButtonPacked";
 
-export default function ItemContainerPacked({ items, removeItem, togglePacked, removeAllItemsPacked, setCategory }) {
+export default function ItemContainerPacked({ items, removeItem, togglePacked, removeAllItemsPacked }) {
+
+    const [activeCategory, setActiveCategory] = useState([]);
+
+
+    const filteredItems = items.filter(item => item.packed && (activeCategory.length === 0 || activeCategory.includes(item.category)));
 
     return (
 
@@ -16,16 +22,22 @@ export default function ItemContainerPacked({ items, removeItem, togglePacked, r
 
                     <MainButtonPacked
                         removeAllItemsPacked={removeAllItemsPacked}
-                        items={items} />
+                        items={items}
+                        activeCategory={activeCategory}
+                        setActiveCategory={setActiveCategory} />
 
 
 
                 </div>
             </header>
+
             <ItemCategoryPacked
-                setCategory={setCategory} />
+                setActiveCategory={setActiveCategory}
+                activeCategory={activeCategory} />
+
+
             <ItemListPacked
-                items={items}
+                items={filteredItems}
                 removeItem={removeItem}
                 togglePacked={togglePacked} />
         </div>

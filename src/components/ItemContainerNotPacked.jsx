@@ -1,10 +1,18 @@
 
 
+import { useState } from "react";
 import ItemListNotPacked from "./ItemListNotPacked";
 import ItemsCategoryNotPacked from "./ItemsCategoryNotPacked";
 import MainButtonsNotPacked from "./MainButtonsNotPacked";
 
 export default function ItemContainerNotPacked({ items, removeItem, removeAllItemsNotPacked, togglePacked, }) {
+
+    const [activeCategory, setActiveCategory] = useState([]);
+
+
+    const filteredItems = items.filter(item => !item.packed && (activeCategory.length === 0 || activeCategory.includes(item.category)));
+
+
 
     return (
 
@@ -16,6 +24,8 @@ export default function ItemContainerNotPacked({ items, removeItem, removeAllIte
                     <MainButtonsNotPacked
                         removeAllItemsNotPacked={removeAllItemsNotPacked}
                         items={items}
+                        setActiveCategory={setActiveCategory}
+
 
 
                     />
@@ -24,11 +34,13 @@ export default function ItemContainerNotPacked({ items, removeItem, removeAllIte
             </header>
 
             <ItemsCategoryNotPacked
+                setActiveCategory={setActiveCategory}
+                activeCategory={activeCategory}
             />
 
 
             <ItemListNotPacked
-                items={items}
+                items={filteredItems}
                 removeItem={removeItem}
                 togglePacked={togglePacked}
             />
