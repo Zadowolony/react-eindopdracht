@@ -2,13 +2,12 @@ export default function ItemsCategoryNotPacked({ setActiveCategory, activeCatego
 
     const categories = ['Documents', 'Cloths', 'Camping gear', 'Toiletry'];
 
-    // Function to toggle category selection
+
     const toggleCategory = (category) => {
         if (activeCategory.includes(category)) {
-            // Remove category from selection if it's already selected
             setActiveCategory(activeCategory.filter(c => c !== category));
         } else {
-            // Add category to selection if it's not already selected
+
             setActiveCategory([...activeCategory, category]);
         }
     };
