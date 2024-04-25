@@ -57,6 +57,7 @@ function App() {
           items={items}
           handleAddItems={handleAddItems}
           setCategory={setCategory}
+          category={category}
         />
 
 
